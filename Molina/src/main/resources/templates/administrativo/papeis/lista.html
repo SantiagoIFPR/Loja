@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+	layout:decorate="~{administrativo/fragments/layout}">
+<head>
+<meta charset="UTF-8">
+<title>Molina Store</title>
+</head>
+<body>
+	<div class="content" layout:fragment="corpo">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="card-title">Listar Papéis</h4>
+					</div>
+					<table id="datatable-buttons"
+						class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Função</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="papeis : ${papeis}">
+								<td th:text="${papeis.id}"></td>
+								<td th:text="${papeis.nome}"></td>
+								<td><a class="btn btn-warning btn-xs"
+									th:href="@{/administrativo/papeis/editarPapel/{id}(id=${papeis.id})}">Editar</a>
+									<a class="btn btn-danger btn-xs"
+									th:href="@{/administrativo/papeis/removerPapel/{id}(id=${papeis.id})}">Remover</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="form-group">
+						<div class="col-md-2">
+							<a class="form-control input-md btn btn-primary"
+								href="/administrativo/papeis/cadastrar">Adicionar</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
