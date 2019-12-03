@@ -26,7 +26,7 @@ import com.loja.Molina.Repository.ProdutoRepository;
 @Controller
 public class ProdutoController {
 
-	private static String caminhoImagens = "C:\\Users\\Karen Violim\\Pictures\\imagens\\";
+	private static String caminhoImagens = "C:\\Users\\Karen Violim\\Pictures\\imagens2\\";
 
 	@Autowired
 	public ProdutoRepository repositoryProduto;

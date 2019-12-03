@@ -23,7 +23,8 @@ public class Compra implements Serializable {
 	private Cliente cliente;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataCompra = new Date();
-	private String formaPagamento;
+	@ManyToOne
+	private FormaDePagamento formaPagamento;
 	private Double valorTotal=0.;
 
 	public long getId() {
@@ -49,12 +50,12 @@ public class Compra implements Serializable {
 	public void setDataCompra(Date dataCompra) {
 		this.dataCompra = dataCompra;
 	}
-
-	public String getFormaPagamento() {
+	
+	public FormaDePagamento getFormaPagamento() {
 		return formaPagamento;
 	}
 
-	public void setFormaPagamento(String formaPagamento) {
+	public void setFormaPagamento(FormaDePagamento formaPagamento) {
 		this.formaPagamento = formaPagamento;
 	}
 

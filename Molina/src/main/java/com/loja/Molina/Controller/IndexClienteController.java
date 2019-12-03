@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.loja.Molina.Model.ItensCompra;
-import com.loja.Molina.Repository.ItensCompraRepository;
 import com.loja.Molina.Repository.ProdutoRepository;
 
 @Controller

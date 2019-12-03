@@ -6,45 +6,55 @@
 <title>Molina Store</title>
 </head>
 <body>
-	<div class="content" layout:fragment="corpo">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="card">
-					<div class="card-header">
-						<h4 class="card-title">Listar Estados</h4>
-					</div>
-					<table id="datatable-buttons"
-						class="table table-striped table-bordered">
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>Nome</th>
-								<th>Sigla</th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:each="estado : ${estado}">
-								<td th:text="${estado.id}"></td>
-								<td th:text="${estado.nome}"></td>
-								<td th:text="${estado.sigla}"></td>
-								<td><a class="btn btn-warning btn-xs"
-									th:href="@{/administrativo/estados/editarEstado/{id}(id=${estado.id})}">Editar</a>
-									<a class="btn btn-danger btn-xs"
-									th:href="@{/administrativo/estados/removerEstado/{id}(id=${estado.id})}">Remover</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="form-group">
-						<div class="col-md-2">
-							<a class="form-control input-md btn btn-primary"
-								href="/administrativo/estados/cadastrar">Adicionar</a>
+	<!--main content start-->
+	<section id="main-content" layout:fragment="corpo">
+		<section class="wrapper">
+			<h3>
+				<i class="fa fa-angle-right"></i>Listar Estados
+			</h3>
+			<div class="row mb">
+				<!-- page start-->
+				<div class="content-panel">
+					<div class="adv-table">
+						<table cellpadding="0" cellspacing="0" border="0"
+							class="display table table-bordered" id="hidden-table-info">
+							<thead>
+								<tr>
+									<th></th>
+									<th>ID</th>
+									<th>Nome</th>
+									<th>Sigla</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="est : ${estado}">
+									<td></td>
+									<td th:text="${est.id}"></td>
+									<td th:text="${est.nome}"></td>
+									<td th:text="${est.sigla}"></td>
+									<td><a class="btn btn-warning btn-xs"
+										th:href="@{/administrativo/estados/editarEstado/{id}(id=${est.id})}">Editar</a>
+										<a class="btn btn-danger btn-xs"
+										th:href="@{/administrativo/estados/removerEstado/{id}(id=${est.id})}">Remover</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="form-group">
+						<a class="form-control input-md btn btn-sucess col-sm-6"
+							href="/administrativo/estados/cadastrar">Adicionar novo Estado</a>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
+			<!-- page end-->
+			<!-- /row -->
+		</section>
+		<!-- /wrapper -->
+	</section>
+	<!-- /MAIN CONTENT -->
+	<!--main content end-->
 </body>
+
 </html>

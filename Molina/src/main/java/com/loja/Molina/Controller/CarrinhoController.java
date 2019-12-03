@@ -16,10 +16,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.loja.Molina.Model.Cliente;
 import com.loja.Molina.Model.Compra;
+import com.loja.Molina.Model.FormaDePagamento;
 import com.loja.Molina.Model.ItensCompra;
 import com.loja.Molina.Model.Produto;
 import com.loja.Molina.Repository.ClienteRepository;
 import com.loja.Molina.Repository.CompraRepository;
+import com.loja.Molina.Repository.FormaPagamentoRepository;
 import com.loja.Molina.Repository.ItensCompraRepository;
 import com.loja.Molina.Repository.ProdutoRepository;
 
@@ -31,6 +33,9 @@ public class CarrinhoController {
 	
 	@Autowired
 	private ClienteRepository repositoryCliente;
+	
+	@Autowired
+	private FormaPagamentoRepository repositoryFormaPg;
 
 	@Autowired
 	private CompraRepository repositoryCompra;
@@ -135,14 +140,18 @@ public class CarrinhoController {
 		mv.addObject("compra", compra);
 		mv.addObject("listaItens", ItensCompra);
 		mv.addObject("cliente", cliente);
+		mv.addObject("formapg", repositoryFormaPg.findAll());
 		return mv;
 	}
 	
 	@PostMapping("/finalizar/confirmar")
-	public ModelAndView confirmarCompra(String formaPagamento) {
-		ModelAndView mv = new ModelAndView("clientes/compraFinalizada");
-		compra.setCliente(cliente);
+	public ModelAndView confirmarCompra(Long idForma) {
+		
+		Optional<FormaDePagamento> op = repositoryFormaPg.findById(idForma);
+		FormaDePagamento formaPagamento = op.get();
+		ModelAndView mv = new ModelAndView("clientes/finalizou");
 		compra.setFormaPagamento(formaPagamento);
+		compra.setCliente(cliente);
 		repositoryCompra.saveAndFlush(compra);
 		
 		for (ItensCompra c : ItensCompra) {

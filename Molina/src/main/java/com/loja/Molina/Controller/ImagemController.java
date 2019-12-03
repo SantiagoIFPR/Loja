@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class ImagemController {
 
-	private static String caminhoImagens = "C:\\Users\\Karen Violim\\Pictures\\imagens\\";
+	private static String caminhoImagens = "C:\\Users\\Karen Violim\\Pictures\\imagens2\\";
 	
 	@GetMapping("/mostrarImagem/{imagem}")
 	@ResponseBody

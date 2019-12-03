@@ -7,159 +7,108 @@
 </head>
 <body>
 	<section layout:fragment="corpo">
-    
-    <div class="product-big-title-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-bit-title text-center">
-                        <h2>Carrinho de Compras</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End Page title area -->
-    
-    
-    <div class="single-product-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row">
-<!--                 <div class="col-md-4"> -->
-<!--                     <div class="single-sidebar"> -->
-<!--                         <h2 class="sidebar-title">Search Products</h2> -->
-<!--                         <form action="#"> -->
-<!--                             <input type="text" placeholder="Search products..."> -->
-<!--                             <input type="submit" value="Search"> -->
-<!--                         </form> -->
-<!--                     </div> -->
-                    
-<!--                     <div class="single-sidebar"> -->
-<!--                         <h2 class="sidebar-title">Products</h2> -->
-<!--                         <div class="thubmnail-recent"> -->
-<!--                             <img src="img/product-thumb-1.jpg" class="recent-thumb" alt=""> -->
-<!--                             <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2> -->
-<!--                             <div class="product-sidebar-price"> -->
-<!--                                 <ins>$700.00</ins> <del>$800.00</del> -->
-<!--                             </div>                              -->
-<!--                         </div> -->
-<!--                         <div class="thubmnail-recent"> -->
-<!--                             <img src="img/product-thumb-1.jpg" class="recent-thumb" alt=""> -->
-<!--                             <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2> -->
-<!--                             <div class="product-sidebar-price"> -->
-<!--                                 <ins>$700.00</ins> <del>$800.00</del> -->
-<!--                             </div>                              -->
-<!--                         </div> -->
-<!--                         <div class="thubmnail-recent"> -->
-<!--                             <img src="img/product-thumb-1.jpg" class="recent-thumb" alt=""> -->
-<!--                             <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2> -->
-<!--                             <div class="product-sidebar-price"> -->
-<!--                                 <ins>$700.00</ins> <del>$800.00</del> -->
-<!--                             </div>                              -->
-<!--                         </div> -->
-<!--                         <div class="thubmnail-recent"> -->
-<!--                             <img src="img/product-thumb-1.jpg" class="recent-thumb" alt=""> -->
-<!--                             <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2> -->
-<!--                             <div class="product-sidebar-price"> -->
-<!--                                 <ins>$700.00</ins> <del>$800.00</del> -->
-<!--                             </div>                              -->
-<!--                         </div> -->
-<!--                     </div> -->
-                    
-<!--                     <div class="single-sidebar"> -->
-<!--                         <h2 class="sidebar-title">Recent Posts</h2> -->
-<!--                         <ul> -->
-<!--                             <li><a href="#">Sony Smart TV - 2015</a></li> -->
-<!--                             <li><a href="#">Sony Smart TV - 2015</a></li> -->
-<!--                             <li><a href="#">Sony Smart TV - 2015</a></li> -->
-<!--                             <li><a href="#">Sony Smart TV - 2015</a></li> -->
-<!--                             <li><a href="#">Sony Smart TV - 2015</a></li> -->
-<!--                         </ul> -->
-<!--                     </div> -->
-<!--                 </div> -->
-                
-                <div class="col-md-12">
-                    <div class="product-content-right">
-                        <div class="woocommerce">
-                            <form method="post" action="#">
-                                <table cellspacing="0" class="shop_table cart">
-                                    <thead>
-                                        <tr>
-                                            <th class="product-thumbnail">Produtos</th>
-                                            <th class="product-name">Nome</th>
-                                            <th class="product-price">Valor Unitário</th>
-                                            <th class="product-quantity">Quantidade</th>
-                                            <th class="product-subtotal">Total</th>
-                                            <th class="product-remove">Remover</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr th:each="item : ${listaItens}">
-                                            <td class="product-thumbnail"><a href="#"><img th:src="@{/mostrarImagem/{imagem}(imagem=${item.produto.imagem})}" alt="product img" /></a></td>
-                                            <td class="product-name"><a><span th:text="${item.produto.nomeProduto}"></span></a></td>
-                                            <td class="product-price"><span th:text="${item.valorUnitario}" class="amount"></span></td>
-                                            <td class="product-quantity">
-											<a class="btn btn-sm btn-sucess" th:href="@{/alterarQuantidade/{id}/{acao}(id=${item.produto.id},acao=${0})}" role="button">
-											<i class="fa fa-minus"></i></a>
-                                           
-                                            <span th:text="${item.quantidade}" class="amount"></span>
-											
-											<a class="btn btn-sm btn-sucess" th:href="@{/alterarQuantidade/{id}/{acao}(id=${item.produto.id},acao=${1})}" role="button">
-											<i class="fa fa-plus"></i></a>
-                                            </td>
-<!--                                             <td class="product-quantity"> -->
-<!--                                                 <div class="quantity buttons_added"> -->
-<!--                                                     <input type="button" class="minus" value="-"> -->
-<!--                                                     <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1"> -->
-<!--                                                     <input type="button" class="plus" value="+"> -->
-<!--                                                 </div> -->
-<!--                                             </td> -->
 
-											<td class="product-subtotal"><span th:text="${item.valorTotal}"></span></td>
-                                            <td class="product-remove">
-                                            <a class="remove" th:href="@{/removerProduto/{id}(id=${item.produto.id})}" role="button"></a>
-<!-- 											<i class="icon-trash icons"></i></a> -->
-											</td>
-                                            
-                                            <td class="product-remove">
-                                                <a title="Remove this item" class="remove" href="#">×</a> 
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
+		<div class="product-big-title-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="product-bit-title text-center">
+							<h2>Carrinho de Compras</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Page title area -->
 
-                            <div class="cart-collaterals">
 
-                            <div class="cart_totals ">
-                                <h2>Cart Totals</h2>
+		<div class="single-product-area">
+			<div class="zigzag-bottom"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="product-content-right">
+							<div class="woocommerce">
+								<form method="post" action="#">
+									<table cellspacing="0" class="shop_table cart">
+										<thead>
+											<tr>
+												<th class="product-thumbnail">Produtos</th>
+												<th class="product-name">Nome</th>
+												<th class="product-price">Valor Unitário</th>
+												<th class="product-quantity">Quantidade</th>
+												<th class="product-subtotal">Total</th>
+												<th class="product-remove">Remover</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr th:each="item : ${listaItens}">
+												<td class="product-thumbnail"><a href="#"><img
+														th:src="@{/mostrarImagem/{imagem}(imagem=${item.produto.imagem})}"
+														alt="product img" /></a></td>
+												<td class="product-name"><a><span
+														th:text="${item.produto.nomeProduto}"></span></a></td>
+												<td class="product-price"><span
+													th:text="${item.valorUnitario}" class="amount"></span></td>
+												<td class="product-quantity"><a
+													class="btn btn-sm btn-sucess"
+													th:href="@{/alterarQuantidade/{id}/{acao}(id=${item.produto.id},acao=${0})}"
+													role="button"> <i class="fa fa-minus"></i></a> <span
+													th:text="${item.quantidade}" class="amount"></span> <a
+													class="btn btn-sm btn-sucess"
+													th:href="@{/alterarQuantidade/{id}/{acao}(id=${item.produto.id},acao=${1})}"
+													role="button"> <i class="fa fa-plus"></i></a></td>
+												<td class="product-subtotal"><span
+													th:text="${item.valorTotal}"></span></td>
+												<td class="product-remove"><a class="remove"
+													th:href="@{/removerProduto/{id}(id=${item.produto.id})}"
+													role="button">X</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</form>
 
-                                <table cellspacing="0">
-                                    <tbody>
-                                        <tr class="cart-subtotal">
-                                            <th>Cart Subtotal</th>
-                                            <td><span class="amount">£15.00</span></td>
-                                        </tr>
+								<div class="cart-collaterals">
 
-                                        <tr class="shipping">
-                                            <th>Shipping and Handling</th>
-                                            <td>Free Shipping</td>
-                                        </tr>
+									<div class="cart_totals ">
+										<h2>TOTAL CARRINHO</h2>
 
-                                        <tr class="order-total">
-                                            <th>Order Total</th>
-                                            <td><strong><span class="amount">£15.00</span></strong> </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            </div>
-                        </div>                        
-                    </div>                    
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-  </body>
+										<table cellspacing="0">
+											<tbody>
+												<tr class="cart-subtotal">
+													<th>Sub Total Carrinho</th>
+													<td><span th:text="${compra.valorTotal}"></span></td>
+												</tr>
+
+												<tr class="shipping">
+													<th>Frete</th>
+													<td>Frete Grátis</td>
+												</tr>
+
+												<tr class="order-total">
+													<th>Total Carrinho</th>
+													<td><strong><span
+															th:text="${compra.valorTotal}"></span></strong></td>
+												</tr>
+												<tr>
+													<td class="actions" colspan="6"><a href="/"><input
+															type="submit" value="Continuar Comprando"
+															name="update_cart" class="button"></a> <a
+														th:href="@{/finalizar}"
+														class="checkout-button button alt wc-forward"><input
+															type="submit" value="Finalizar Compra" name="proceed"
+															class="checkout-button button alt wc-forward"></a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
 </html>

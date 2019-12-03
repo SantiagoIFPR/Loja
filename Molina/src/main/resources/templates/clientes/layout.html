@@ -36,15 +36,14 @@
 				<div class="col-sm-6">
 					<div class="logo">
 						<h1>
-							<a href="./"><img th:src="@{img/logo.png}"></a>
+							<a th:href="@{/}"><img th:src="@{img/logo.png}"></a>
 						</h1>
 					</div>
 				</div>
 
 				<div class="col-sm-6">
 					<div class="shopping-item">
-						<a href="cart">Cart - <span class="cart-amunt">$100</span> <i
-							class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+						<a th:href="@{/carrinho}">Carrinho<i class="fa fa-shopping-cart"></i></a>
 					</div>
 				</div>
 			</div>
@@ -65,13 +64,9 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a th:href="@{/}">Página Inicial</a></li>
-						<li><a th:href="@{/shop}">Produtos</a></li>
+						<li class="active"><a th:href="@{/}">Produtos</a></li>
 						<li><a th:href="@{/carrinho}">Carrinho</a></li>
-						<li><a th:href="@{/cadastrar}">Cadastre-se</a></li>
-						<li><a href="">Login</a></li>
-						<li><a href="#">Others</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a th:href="@{/clientes/cadastrar}">Cadastre-se/Login</a></li>
 					</ul>
 				</div>
 			</div>

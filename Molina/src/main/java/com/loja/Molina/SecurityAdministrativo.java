@@ -32,8 +32,8 @@ public class SecurityAdministrativo extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/login").permitAll().antMatchers("/administrativo/cupons/**")
-				.hasAnyAuthority("Gerente").antMatchers("/administrativo/produtos/**").authenticated().and().formLogin()
+		http.authorizeRequests().antMatchers("/login").permitAll().antMatchers("/administrativo/entradas/**")
+				.hasAnyAuthority("Gerente").antMatchers("/administrativo/**").authenticated().and().formLogin()
 				.loginPage("/login").failureUrl("/login").loginProcessingUrl("/admin")
 				.defaultSuccessUrl("/administrativo").usernameParameter("username").passwordParameter("password").and()
 				.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))

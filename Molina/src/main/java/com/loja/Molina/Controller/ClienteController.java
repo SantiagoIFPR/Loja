@@ -56,7 +56,7 @@ public class ClienteController {
 	
 	@GetMapping("clientes/cadastrar")
 	public ModelAndView add(Cliente cliente) {
-		ModelAndView mv = new ModelAndView("/clientes/clienteCadastro");
+		ModelAndView mv = new ModelAndView("/clientes/cadastro");
 		mv.addObject("cliente", cliente);
 		mv.addObject("cidades", repositoryCidade.findAll());
 		return mv;
