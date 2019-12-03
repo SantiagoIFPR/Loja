@@ -57,7 +57,7 @@
 				<!-- sidebar menu start-->
 				<ul class="sidebar-menu" id="nav-accordion">
 					<p class="centered">
-						<a href="profile.html"><img src="/assets/img/ui-san.png"
+						<a href="/administrativo"><img src="/assets/img/ui-san.png"
 							class="img-circle" width="80"></a>
 					</p>
 					<h5 class="centered">Santiago Molina</h5>
@@ -68,6 +68,8 @@
 							class="fa fa-tasks"></i> <span>Cadastros</span>
 					</a>
 						<ul class="sub">
+							<li><a th:href="@{/administrativo/categorias/cadastrar}">Cadastrar
+									Categoria</a></li>
 							<li><a th:href="@{/administrativo/cidades/cadastrar}">Cadastrar
 									Cidade</a></li>
 							<li><a th:href="@{/clientes/cadastrar}">Cadastrar
@@ -81,6 +83,8 @@
 									Forma de Pagamento</a></li>
 							<li><a th:href="@{/administrativo/funcionarios/cadastrar}">Cadastrar
 									Funcionario</a></li>
+							<li><a th:href="@{/administrativo/marcas/cadastrar}">Cadastrar
+									Marca</a></li>
 							<li><a th:href="@{/administrativo/papeis/cadastrar}">Cadastrar
 									Papel</a></li>
 							<li><a th:href="@{/administrativo/permissoes/cadastrar}">Cadastrar
@@ -92,6 +96,8 @@
 							class="fa fa-bar-chart-o"></i> <span>Listas</span>
 					</a>
 						<ul class="sub">
+							<li><a th:href="@{/administrativo/categorias/listar}">Listar
+									Categorias</a></li>
 							<li><a th:href="@{/administrativo/cidades/listar}">Listar
 									Cidades</a></li>
 							<li><a th:href="@{/administrativo/clientes/listar}">Listar
@@ -102,6 +108,8 @@
 									Forma de Pagamentos</a></li>
 							<li><a th:href="@{/administrativo/funcionarios/listar}">Listar
 									Funcionarios</a></li>
+							<li><a th:href="@{/administrativo/marcas/listar}">Listar
+									Marcas</a></li>		
 							<li><a th:href="@{/administrativo/papeis/listar}">Listar
 									Papéis</a></li>
 							<li><a th:href="@{/administrativo/permissoes/listar}">Listar
@@ -132,6 +140,7 @@
 	<script src="/assets/lib/sparkline-chart.js"></script>
 	<script src="/assets/lib/zabuto_calendar.js"></script>
 	<script type="application/javascript">
+		
 		
 		
 		
@@ -175,6 +184,7 @@
       var to = $("#" + id).data("to");
       console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
     }
+	
 	
 	
 	

@@ -10,7 +10,7 @@
 	<section id="main-content" layout:fragment="corpo">
 		<section class="wrapper">
 			<h3>
-				<i class="fa fa-angle-right"></i>Listar Permissões
+				<i class="fa fa-angle-right"></i>Listar Categorias
 			</h3>
 			<div class="row mb">
 				<!-- page start-->
@@ -19,42 +19,29 @@
 						<table cellpadding="0" cellspacing="0" border="0"
 							class="display table table-bordered" id="hidden-table-info">
 							<thead>
-
 								<tr>
 									<th></th>
 									<th>ID</th>
-									<th>Nome do Produto</th>
-									<th>Valor do Produto</th>
-									<th>Marca</th>
-									<th>Categoria</th>
-									<th>Quantidade em Estoque</th>
-									<th>Imagem</th>
+									<th>Nome</th>
 									<th></th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr th:each="prod : ${produto}">
+								<tr th:each="cat : ${categoria}">
 									<td></td>
-									<td th:text="${prod.id}"></td>
-									<td th:text="${prod.nomeProduto}"></td>
-									<td th:text="${prod.valor}"></td>
-									<td th:text="${prod.marca.nomeMarca}"></td>
-									<td th:text="${prod.categoria.nomeCategoria}"></td>
-									<td th:text="${prod.quantidadeEstoque}"></td>
-									<td><img
-										th:src="@{/administrativo/produtos/mostrarImagem/{imagem}(imagem=${prod.imagem})}"
-										width="100" /></td>
+									<td th:text="${cat.id}"></td>
+									<td th:text="${cat.nomeCategoria}"></td>
 									<td><a class="btn btn-warning btn-xs"
-										th:href="@{/administrativo/produtos/editarProduto/{id}(id=${prod.id})}">Editar</a>
+										th:href="@{/administrativo/categorias/editarCategoria/{id}(id=${cat.id})}">Editar</a>
 										<a class="btn btn-danger btn-xs"
-										th:href="@{/administrativo/produtos/removerProduto/{id}(id=${prod.id})}">Remover</a>
+										th:href="@{/administrativo/categorias/removerCategoria/{id}(id=${cat.id})}">Remover</a>
 									</td>
 								</tr>
 							</tbody>
 						</table>
 						<div class="form-group">
-							<a class="form-control input-md btn btn-sucess col-sm-6"
-								href="/administrativo/produtos/cadastrar">Adicionar novo Produto</a>
+						<a class="form-control input-md btn btn-sucess col-sm-6"
+							href="/administrativo/categorias/cadastrar">Adicionar nova Categoria</a>
 						</div>
 					</div>
 				</div>

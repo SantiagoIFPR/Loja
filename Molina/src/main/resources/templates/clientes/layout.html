@@ -43,7 +43,15 @@
 
 				<div class="col-sm-6">
 					<div class="shopping-item">
-						<a th:href="@{/carrinho}">Carrinho<i class="fa fa-shopping-cart"></i></a>
+						<a th:href="@{/carrinho}">Carrinho<i
+							class="fa fa-shopping-cart"></i></a>
+					</div>
+					<div class="shopping-item2 dropdown">
+						<a class="dropdown-toggle" type="button"
+							id="dropdownMenuButton" data-toggle="dropdown">Usuário Logado <i class="fa fa-user"></i></a>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item active" href="/logout">Logout</a>
+						</div>
 					</div>
 				</div>
 			</div>
